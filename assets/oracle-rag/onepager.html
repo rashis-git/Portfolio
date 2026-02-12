@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oracle RAG Chatbot — Product One-Pager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #cd3432;
+      --accent-light: #e74c3c;
+      --accent-bg: #fdf0ef;
+      --camel: #b58c4a;
+      --camel-bg: #faf5ed;
+      --bg: #faf8f5;
+      --card: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-mid: #555555;
+      --text-light: #888888;
+      --border: #eee;
+      --shadow: 0 1px 4px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --green: #27ae60;
+      --green-bg: #eafaf1;
+      --blue: #2980b9;
+      --blue-bg: #eaf2f8;
+      --orange: #e67e22;
+      --orange-bg: #fdf2e9;
+      --purple: #8e44ad;
+      --purple-bg: #f4ecf7;
+    }
+
+    html {
+      font-size: 14px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 32px 20px;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .header-title h1 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .header-title p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-top: 1px;
+    }
+
+    .header-badges {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .badge--filled {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .badge--outline {
+      border: 1.5px solid var(--text-light);
+      color: var(--text-mid);
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card-header .icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .card-header h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .card p {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    /* ── CHALLENGE / SOLUTION ── */
+    .card--challenge .card-header .icon { color: var(--orange); }
+    .card--solution .card-header .icon { color: var(--accent-light); }
+
+    /* ── PAIN POINTS ── */
+    .pain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.45;
+    }
+
+    .pain-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pain-dot--red {
+      background: var(--accent-bg);
+      color: var(--accent);
+    }
+
+    .pain-dot--orange {
+      background: var(--orange-bg);
+      color: var(--orange);
+    }
+
+    .pain-dot--blue {
+      background: var(--blue-bg);
+      color: var(--blue);
+    }
+
+    /* ── ARCHITECTURE STEPS ── */
+    .arch-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .arch-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--bg);
+    }
+
+    .arch-step:nth-child(1) { background: var(--accent-bg); }
+    .arch-step:nth-child(2) { background: var(--camel-bg); }
+    .arch-step:nth-child(3) { background: var(--blue-bg); }
+    .arch-step:nth-child(4) { background: var(--green-bg); }
+
+    .step-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-light);
+      flex-shrink: 0;
+      padding-top: 1px;
+      min-width: 18px;
+    }
+
+    .arch-step:nth-child(1) .step-num { color: var(--accent); }
+    .arch-step:nth-child(2) .step-num { color: var(--camel); }
+    .arch-step:nth-child(3) .step-num { color: var(--blue); }
+    .arch-step:nth-child(4) .step-num { color: var(--green); }
+
+    .step-content strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .step-content span {
+      font-size: 0.74rem;
+      color: var(--text-mid);
+      line-height: 1.4;
+    }
+
+    /* ── LIVE APP ── */
+    .live-app {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .live-app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .live-app-status {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .live-app-status span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .live-app-visit {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .live-app-visit:hover {
+      text-decoration: underline;
+    }
+
+    .live-preview {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .live-preview .globe {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .live-preview .url {
+      font-size: 0.74rem;
+      color: var(--text-mid);
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    /* ── STATUS ── */
+    .status-phase {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .status-phase-label {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    .status-phase-value {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-bg);
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #f0ecea;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 80%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 4px;
+      transition: width 0.6s ease;
+    }
+
+    .status-text {
+      font-size: 0.76rem;
+      color: var(--text-mid);
+      line-height: 1.45;
+    }
+
+    /* ── KNOWLEDGE BASE ── */
+    .kb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .kb-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f5f3f0;
+    }
+
+    .kb-item:last-child {
+      border-bottom: none;
+      padding-top: 10px;
+      margin-top: 2px;
+      border-top: 1.5px solid var(--border);
+    }
+
+    .kb-item-name {
+      font-size: 0.78rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      overflow: hidden;
+    }
+
+    .kb-item-name .doc-icon {
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .kb-item-name span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .kb-item:last-child .kb-item-name {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .kb-item-size {
+      font-size: 0.74rem;
+      color: var(--text-light);
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .kb-item:last-child .kb-item-size {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ── TECH STACK ── */
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-pill {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: var(--bg);
+      color: var(--text-mid);
+      border: 1px solid #e8e4df;
+    }
+
+    .tech-pill--accent {
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-color: transparent;
+    }
+
+    .tech-pill--camel {
+      background: var(--camel-bg);
+      color: #8a6b30;
+      border-color: transparent;
+    }
+
+    .tech-pill--blue {
+      background: var(--blue-bg);
+      color: var(--blue);
+      border-color: transparent;
+    }
+
+    .tech-pill--green {
+      background: var(--green-bg);
+      color: #1e8449;
+      border-color: transparent;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 20px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+
+    .footer-left strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.76rem;
+      color: var(--text-mid);
+    }
+
+    .footer-right .dot-sep {
+      color: var(--text-light);
+      font-size: 0.6rem;
+    }
+
+    .footer-right .check {
+      color: var(--green);
+      font-size: 0.8rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 820px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="header-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="header-title">
+          <h1>Oracle RAG Chatbot</h1>
+          <p>AI-Powered Documentation Assistant</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge--filled">Knowledge Base Ready</span>
+        <span class="badge badge--outline">Enterprise ERP</span>
+      </div>
+    </header>
+
+    <!-- CARD GRID -->
+    <div class="grid">
+
+      <!-- COLUMN 1 -->
+      <div class="column">
+
+        <!-- The Challenge -->
+        <div class="card card--challenge">
+          <div class="card-header">
+            <span class="icon">&#9888;&#65039;</span>
+            <h3>The Challenge</h3>
+          </div>
+          <p>Oracle Procurement &amp; Expense modules have extensive documentation spread across 11+ disjointed PDFs totaling ~37.7 MB. Consultants struggle to synthesize this efficiently.</p>
+        </div>
+
+        <!-- The Solution -->
+        <div class="card card--solution">
+          <div class="card-header">
+            <span class="icon">&#9889;</span>
+            <h3>The Solution</h3>
+          </div>
+          <p>A Retrieval Augmented Generation (RAG) chatbot that ingests Oracle documentation into a vector database, providing accurate, context-aware answers with source citations.</p>
+        </div>
+
+        <!-- Pain Points -->
+        <div class="card">
+          <div class="card-header">
+            <span class="icon" style="color: var(--accent);">&#128308;</span>
+            <h3>Pain Points</h3>
+          </div>
+          <ul class="pain-list">
+            <li>
+              <div class="pain-dot pain-dot--red">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <span>Google &amp; LLM responses lack verified Oracle sources</span>
+            </li>
+            <li>
+              <div class="pain-dot pain-dot--orange">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <span>Navigation paths often deviate from Oracle standards</span>
+            </li>
+            <li>
+              <div class="pain-dot pain-dot--blue">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <span>Finding verified docs requires manual website crawling</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 2 -->
+      <div class="column">
+
+        <!-- Solution Architecture -->
+        <div class="card">
+          <div class="card-header">
+            <span class="icon" style="color: var(--blue);">&#128736;&#65039;</span>
+            <h3>Solution Architecture</h3>
+          </div>
+          <div class="arch-steps">
+            <div class="arch-step">
+              <span class="step-num">01</span>
+              <div class="step-content">
+                <strong>Knowledge Base</strong>
+                <span>11 curated docs: Procurement (R12, 25C), P2P, Expenses</span>
+              </div>
+            </div>
+            <div class="arch-step">
+              <span class="step-num">02</span>
+              <div class="step-content">
+                <strong>Ingestion Pipeline</strong>
+                <span>PyPDF2 + LangChain for parsing and chunking</span>
+              </div>
+            </div>
+            <div class="arch-step">
+              <span class="step-num">03</span>
+              <div class="step-content">
+                <strong>Vector Storage</strong>
+                <span>OpenAI embeddings &rarr; Pinecone / Chroma DB</span>
+              </div>
+            </div>
+            <div class="arch-step">
+              <span class="step-num">04</span>
+              <div class="step-content">
+                <strong>Generation Layer</strong>
+                <span>Query &rarr; Retrieve &rarr; LLM &rarr; Cited answers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Application -->
+        <div class="card">
+          <div class="live-app">
+            <div class="live-app-header">
+              <div class="live-app-status">
+                <div class="live-dot"></div>
+                <span>Live Application</span>
+              </div>
+              <a href="https://oracle-rag-chatbot.rashigupta.cloud" target="_blank" class="live-app-visit">
+                Visit
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <div class="live-preview">
+              <span class="globe">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="url">oracle-rag-chatbot.rashigupta.cloud</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 3 -->
+      <div class="column">
+
+        <!-- Current Status -->
+        <div class="card">
+          <div class="card-header">
+            <span class="icon" style="color: var(--accent);">&#128200;</span>
+            <h3>Current Status</h3>
+          </div>
+          <div class="status-phase">
+            <span class="status-phase-label">Phase</span>
+            <span class="status-phase-value">Implementation</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <p class="status-text">Data layer fully prepared with domain-specific corpus</p>
+        </div>
+
+        <!-- Knowledge Base -->
+        <div class="card">
+          <div class="card-header">
+            <span class="icon" style="color: var(--camel);">&#128218;</span>
+            <h3>Knowledge Base</h3>
+          </div>
+          <div class="kb-list">
+            <div class="kb-item">
+              <div class="kb-item-name">
+                <span class="doc-icon">&#128196;</span>
+                <span>Oracle Procuremen...</span>
+              </div>
+              <span class="kb-item-size">19 MB</span>
+            </div>
+            <div class="kb-item">
+              <div class="kb-item-name">
+                <span class="doc-icon">&#128196;</span>
+                <span>Procurement R12 G...</span>
+              </div>
+              <span class="kb-item-size">8.4 MB</span>
+            </div>
+            <div class="kb-item">
+              <div class="kb-item-name">
+                <span class="doc-icon">&#128196;</span>
+                <span>P2P Process Flows</span>
+              </div>
+              <span class="kb-item-size">5.2 MB</span>
+            </div>
+            <div class="kb-item">
+              <div class="kb-item-name">
+                <span class="doc-icon">&#128196;</span>
+                <span>Expense Managem...</span>
+              </div>
+              <span class="kb-item-size">5.1 MB</span>
+            </div>
+            <div class="kb-item">
+              <div class="kb-item-name">
+                <span class="doc-icon" style="font-size: 0.8rem;">&#128202;</span>
+                <span>Total Corpus</span>
+              </div>
+              <span class="kb-item-size">~37.7 MB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="card">
+          <div class="card-header">
+            <span class="icon" style="color: var(--purple);">&#128295;</span>
+            <h3>Tech Stack</h3>
+          </div>
+          <div class="tech-pills">
+            <span class="tech-pill tech-pill--accent">PyPDF2</span>
+            <span class="tech-pill tech-pill--camel">OpenAI</span>
+            <span class="tech-pill tech-pill--blue">Pinecone</span>
+            <span class="tech-pill tech-pill--green">GPT-4</span>
+            <span class="tech-pill">Gemini</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-left">
+        <strong>Role:</strong> Product Owner
+      </div>
+      <div class="footer-right">
+        <span class="check">&#10003;</span>
+        <span>Reduces manual documentation search time</span>
+        <span class="dot-sep">&#8226;</span>
+        <span class="check">&#10003;</span>
+        <span>Provides verified, cited answers</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

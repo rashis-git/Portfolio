@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debubble — Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #0a0a1a;
+            position: relative;
+        }
+
+        /* Animated gradient background */
+        .bg-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 500px 350px at 80% 30%, rgba(168, 85, 247, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 400px 300px at 60% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            animation: gradientShift 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes gradientShift {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Floating bubbles */
+        .bubbles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            animation: float linear infinite;
+        }
+
+        .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; top: 20%; animation-duration: 12s; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 120px; height: 120px; left: 70%; top: 60%; animation-duration: 15s; animation-delay: 2s; }
+        .bubble:nth-child(3) { width: 60px; height: 60px; left: 40%; top: 75%; animation-duration: 10s; animation-delay: 4s; }
+        .bubble:nth-child(4) { width: 100px; height: 100px; left: 85%; top: 15%; animation-duration: 14s; animation-delay: 1s; }
+        .bubble:nth-child(5) { width: 50px; height: 50px; left: 25%; top: 45%; animation-duration: 11s; animation-delay: 3s; }
+        .bubble:nth-child(6) { width: 140px; height: 140px; left: 55%; top: 10%; animation-duration: 16s; animation-delay: 5s; }
+        .bubble:nth-child(7) { width: 70px; height: 70px; left: 5%; top: 70%; animation-duration: 13s; animation-delay: 2s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-30px) scale(1.05); opacity: 0.6; }
+            100% { transform: translateY(0) scale(1); opacity: 0.4; }
+        }
+
+        /* Main content */
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .in-progress-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(168, 85, 247, 0.9);
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 6px 20px;
+            border-radius: 100px;
+            margin-bottom: 40px;
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 24px;
+            background: linear-gradient(
+                135deg,
+                #e0e0ff 0%,
+                #a78bfa 25%,
+                #818cf8 50%,
+                #60a5fa 75%,
+                #e0e0ff 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.6;
+            max-width: 420px;
+            margin: 0 auto 32px;
+        }
+
+        .concept-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .concept-tag {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.3);
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="content">
+        <div class="in-progress-tag">In Progress</div>
+        <h1 class="title">DEBUBBLE</h1>
+        <p class="subtitle">
+            Fighting algorithmic content bubbles with daily AI-curated reads that progressively expand your intellectual world.
+        </p>
+        <div class="concept-tags">
+            <span class="concept-tag">AI Curation</span>
+            <span class="concept-tag">Content Discovery</span>
+            <span class="concept-tag">Neuroscience-Backed</span>
+            <span class="concept-tag">$10/mo PWA</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-    /* Colors - Warm Taupe Theme */
+    /* Colors - Warm Taupe Theme (Dark) */
     --bg-primary: #1c1917;
     --bg-secondary: #38322e;
     --bg-tertiary: #534b46;
@@ -12,7 +12,7 @@
 
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-mono: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
     --fs-xs: 0.75rem;
     --fs-sm: 0.875rem;
     --fs-md: 1rem;
@@ -334,15 +334,54 @@ ul {
     color: var(--text-primary);
 }
 
+.about-text em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 500;
+}
+
 /* ===== WORK SECTION ===== */
+.work-subsection {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+    margin-top: var(--space-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.work-subsection:first-of-type {
+    margin-top: 0;
+}
+
+.work-subsection-tag {
+    font-size: var(--fs-xs);
+    color: var(--accent);
+    background-color: var(--accent-tint);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--border-radius);
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-md);
 }
 
+.projects-grid--enterprise {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .project-card {
-    background-color: var(--bg-secondary);
+    background-color: #2a2521;
     border-radius: var(--border-radius);
     padding: 0;
     transition: all var(--transition-normal);
@@ -351,6 +390,9 @@ ul {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .project-image {
@@ -394,7 +436,8 @@ ul {
 
 .project-card:hover {
     transform: translateY(-5px);
-    background-color: var(--bg-tertiary);
+    background-color: #332e29;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(193, 93, 62, 0.15);
 }
 
 .project-header {
@@ -612,7 +655,7 @@ ul {
 .modal {
     background-color: #f3f2f1;
     border-radius: var(--border-radius);
-    max-width: 900px;
+    max-width: 1100px;
     max-height: 90vh;
     width: 100%;
     overflow-y: auto;
@@ -636,7 +679,7 @@ ul {
     cursor: pointer;
     padding: var(--space-xs);
     z-index: 10;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .modal-close:hover {
@@ -850,6 +893,77 @@ ul {
     border: 1px solid #d1cbc7;
 }
 
+/* Compact Case Study (embedded presentations) */
+.case-study--compact .case-study-header {
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+.case-study-meta {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: var(--space-xs);
+}
+
+.case-study--compact .case-study-type {
+    display: inline;
+    margin-bottom: 0;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.case-study-date {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: #6f645d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.case-study-date::before {
+    content: '\00b7';
+    margin: 0 0.6rem;
+    color: #b9b1ac;
+}
+
+.case-study-blurb {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: #534b46;
+}
+
+.case-study-embed {
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid #d1cbc7;
+    background: #fff;
+}
+
+.case-study-embed iframe {
+    width: 100%;
+    height: 65vh;
+    border: none;
+    display: block;
+}
+
+.case-study-status {
+    text-align: center;
+    padding: var(--space-xl);
+    background: #f8f7f6;
+    border-radius: var(--border-radius);
+    border: 1px dashed #d1cbc7;
+}
+
+.case-study-status p {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: #6f645d;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     :root {
@@ -876,7 +990,8 @@ ul {
         max-width: 100px;
     }
 
-    .projects-grid {
+    .projects-grid,
+    .projects-grid--enterprise {
         grid-template-columns: 1fr;
     }
 

@@ -40,11 +40,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-greeting">Hi, my name is</p>
+            <p class="hero-greeting">Hi, I'm</p>
             <h1 class="hero-name">Rashi Gupta.</h1>
-            <h2 class="hero-tagline">Product consultant by day. AI builder by night.</h2>
+            <h2 class="hero-tagline">I figure out the why. Then I build the what.</h2>
             <p class="hero-description">
-                I work at the intersection of product thinking and technical implementation—figuring out what to build, then actually building it. Currently at IBM, shipping enterprise products and AI tools on the side.
+                Product consultant by day, AI builder on the side. I've shipped 5 AI products, led enterprise rollouts across 72 business units, and I'm figuring out the AI + Product space — honestly, and in public.
             </p>
             <div class="hero-links">
                 <a href="https://linkedin.com/in/rashigupta919" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
@@ -71,16 +71,16 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a Product Consultant at IBM by day, building AI products on the side. Over the past 4 years, I've led product rollouts across 72 business units, shipped 3 AI web apps from scratch, and improved a GenAI tool's accuracy from 50% to 75% by rethinking the product strategy.
+                        I started as a consultant at Bosch who kept asking "why are we building this?" instead of just implementing requirements. That question followed me through an MBA, into IBM, and now into everything I build.
                     </p>
                     <p>
-                        At IBM, I work on Oracle Cloud implementations—configuring expense policies, building procurement integrations, and solving regional compliance challenges like China's Fapiao system. It's enterprise software, but the problems are real: cross-functional coordination, stakeholder management, and making complex systems work for actual users.
+                        At IBM, I worked on Oracle Expenses for 72 business units globally — including navigating a China Fapiao integration that needed a custom approach beyond Oracle's standard setup. On the GenAI side, our team found that fixing hallucinations in a test script agent wasn't about model parameters — it was about feeding it better business context. Small, collaborative efforts across the team moved accuracy from unusable to 60-70%.
                     </p>
                     <p>
-                        Outside work, I build AI tools. DayFlow is a productivity app I designed and shipped end-to-end. I also built an Oracle RAG chatbot to help consultants navigate 1000+ pages of documentation, and an ATS resume optimizer that I actually use for my own job applications.
+                        Along with work, I build AI products. A content curation PWA backed by neuroscience research. A meal companion for solo diners. An ATS resume optimizer I use for my own applications. A RAG chatbot for Oracle docs. A productivity app with swipe-based logging. These didn't start in a vacuum — they came from real problems I saw around me, from family, friends, and colleagues — and nothing out there solved them well enough.
                     </p>
                     <p>
-                        I like working at the intersection of product thinking and technical implementation—figuring out what to build, then actually building it.
+                        I believe as AI makes execution cheaper, the most valuable skill becomes knowing <em>what's worth building</em>. That's the space I want to work in.
                     </p>
                 </div>
             </div>
@@ -91,9 +91,39 @@
     <section id="work" class="section">
         <div class="section-container">
             <h2 class="section-title"><span class="section-number">02.</span> Featured Work</h2>
+            <h3 class="work-subsection">Things I Built</h3>
             <div class="projects-grid">
 
-                <!-- Project 1: DayFlow -->
+                <!-- Project 1: SoloBite -->
+                <article class="project-card" data-project="solobite">
+                    <div class="project-image">
+                        <img src="assets/solobite/thumbnail.png" alt="SoloBite App" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3 class="project-title">SoloBite</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/rashis-git/SoloBite" target="_blank" rel="noopener" class="project-external" aria-label="GitHub">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                                <a href="https://solobite.rashigupta.cloud" target="_blank" rel="noopener" class="project-external" aria-label="Visit SoloBite">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-type">AI Meal Companion</p>
+                        <p class="project-description">AI-powered recipe engine for solo diners. Snap your fridge, get a single-portion, nutritionally-complete meal from what you already have.</p>
+                        <ul class="project-tech">
+                            <li>Next.js</li>
+                            <li>Claude API</li>
+                            <li>YouTube API</li>
+                            <li>PWA</li>
+                        </ul>
+                        <span class="project-cta">View Case Study</span>
+                    </div>
+                </article>
+
+                <!-- Project 2: DayFlow -->
                 <article class="project-card" data-project="dayflow">
                     <div class="project-image">
                         <img src="assets/dayflow/thumbnail.png" alt="DayFlow App" loading="lazy">
@@ -174,48 +204,25 @@
                     </div>
                 </article>
 
-                <!-- Project 4: GenAI Test Script Generator -->
-                <article class="project-card" data-project="genai">
+                <!-- Project 5: Debubble -->
+                <article class="project-card" data-project="debubble">
                     <div class="project-image">
-                        <img src="assets/ibm/thumbnail.png" alt="IBM Project" loading="lazy">
+                        <img src="assets/debubble/thumbnail.png" alt="Debubble App" loading="lazy">
                     </div>
                     <div class="project-body">
                         <div class="project-header">
-                            <h3 class="project-title">GenAI Test Script Generator</h3>
+                            <h3 class="project-title">Debubble</h3>
                             <div class="project-links">
-                                <span class="project-tag">IBM</span>
+                                <span class="project-tag">In Progress</span>
                             </div>
                         </div>
-                        <p class="project-type">IBM AI Project</p>
-                        <p class="project-description">AI agent that generates Oracle Fusion test scripts from RTM templates, reducing creation time from days to minutes.</p>
+                        <p class="project-type">Anti-Content-Bubble PWA</p>
+                        <p class="project-description">Subscription app that fights algorithmic content bubbles with daily AI-curated reads, progressively expanding your intellectual world.</p>
                         <ul class="project-tech">
-                            <li>IBM Granite</li>
-                            <li>Llama</li>
-                            <li>Oracle Fusion</li>
-                        </ul>
-                        <span class="project-cta">View Case Study</span>
-                    </div>
-                </article>
-
-                <!-- Project 5: Oracle Expenses & Procurement -->
-                <article class="project-card" data-project="oracle-enterprise">
-                    <div class="project-image">
-                        <img src="assets/ibm/thumbnail.png" alt="IBM Project" loading="lazy">
-                    </div>
-                    <div class="project-body">
-                        <div class="project-header">
-                            <h3 class="project-title">Oracle Expenses & Procurement</h3>
-                            <div class="project-links">
-                                <span class="project-tag">IBM</span>
-                            </div>
-                        </div>
-                        <p class="project-type">IBM Enterprise Project</p>
-                        <p class="project-description">Global Oracle Fusion implementation: Expenses for 72 business units with China Fapiao integration, and Amazon Punchout catalog across 20 regions.</p>
-                        <ul class="project-tech">
-                            <li>Oracle Fusion</li>
-                            <li>CXML</li>
-                            <li>Alibaba API</li>
-                            <li>Punchout</li>
+                            <li>Next.js</li>
+                            <li>PostgreSQL</li>
+                            <li>OpenAI</li>
+                            <li>Stripe</li>
                         </ul>
                         <span class="project-cta">View Case Study</span>
                     </div>
@@ -273,8 +280,7 @@
             <h2 class="section-title"><span class="section-number">04.</span> Get In Touch</h2>
             <div class="contact-content">
                 <p class="contact-text">
-                    I'm interested in roles at the intersection of Product and AI—whether that's product management, building AI tools, or something in between.
-                    If you're working on something interesting or just want to chat, I'd love to hear from you.
+                    I'm looking for AI Product Management roles where I can combine enterprise domain knowledge with hands-on building experience. If you're working on something interesting or just want to talk shop, I'd love to hear from you.
                 </p>
                 <a href="mailto:rashigupta919@gmail.com" class="contact-button">Say Hello</a>
                 <div class="contact-links">
@@ -304,473 +310,96 @@
 
     <!-- Case Study Templates -->
     <template id="case-study-dayflow">
-        <article class="case-study">
+        <article class="case-study case-study--compact">
             <header class="case-study-header">
-                <span class="case-study-type">Personal AI App</span>
+                <div class="case-study-meta">
+                    <span class="case-study-type">Personal AI App</span>
+                    <span class="case-study-date">2025</span>
+                </div>
                 <h1 class="case-study-title">DayFlow</h1>
-                <p class="case-study-subtitle">AI-powered daily activity tracker that turns logging into a game and provides automated coaching.</p>
+                <p class="case-study-blurb">I kept ending my days exhausted but couldn't figure out where my time actually went. Spreadsheets, to-do apps, Airtable &mdash; all had the same problem. Logging felt like a chore, so I'd quit after 2-3 days. DayFlow replaces rigid forms with swipe cards and physics-based bubble inputs, tracks mood and energy alongside activities, and sends an AI coaching summary each night based on patterns it finds.</p>
                 <div class="case-study-links">
-                    <a href="https://dayflow.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App</a>
-                    <a href="assets/dayflow/DayFlow_case_study.pdf" target="_blank" rel="noopener" class="case-study-link">View Full Case Study (PDF)</a>
+                    <a href="https://dayflow.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App &#8599;</a>
                 </div>
             </header>
-
-            <div class="case-study-pdf-embed">
-                <iframe src="assets/dayflow/DayFlow_case_study.pdf" width="100%" height="500px" style="border: 1px solid var(--bg-tertiary); border-radius: 4px;"></iframe>
-            </div>
-
-            <section class="case-study-section">
-                <h2>The Problem</h2>
-                <p>I was exhausted at the end of every day, but my task list never seemed to end. I couldn't understand where my time was going. I tried to-do apps, blackboards, Excel sheets. All had the same problems:</p>
-                <ul>
-                    <li>Logging was time-consuming</li>
-                    <li>I would forget to log after 2-3 days</li>
-                    <li>Even if I logged, I got nothing useful without manual analysis</li>
-                    <li>When motivation dropped, analysis stopped, which killed the logging habit</li>
-                </ul>
-                <p>People look at their growing task list and feel overwhelmed, but never stop to appreciate what they completed. I wanted to help people understand where time goes and feel accomplished instead of anxious.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>My Role</h2>
-                <p>Solo product manager and developer (AI-assisted). I owned everything: problem definition, user research, tool selection, architecture decisions, frontend/backend development, and iteration based on user feedback.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>The Approach</h2>
-
-                <h3>Phase 1: MVP Validation</h3>
-                <p>Before building a full app, I tested if I genuinely wanted to log my day. Created a simple setup: Airtable database + form, n8n workflow generating summaries at 11pm. It was difficult and inconvenient. It didn't excite me as a user.</p>
-
-                <h3>Phase 2: Research & Tool Selection</h3>
-                <p>Brainstormed with Gemini to understand blockers and market gaps. Experimented with Base44, Lovable, and Firebase Studio. Evaluated based on token limits, ease of use, and how well the LLM understood requirements. Finalized Firebase Studio.</p>
-
-                <h3>Phase 3: The App Build</h3>
-                <p>Developed frontend using Firebase Studio. Moved to Firestore for better connectivity and flexible schema. Created MVP first, then iterated into Version 2 based on user feedback from LinkedIn outreach.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Key Features</h2>
-
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h4>Tinder-Style Swipe Cards</h4>
-                        <p>No forms. Activities appear as cards. Swipe right = did it, swipe left = didn't. Tap tick = log time. The goal: make logging feel like a game, not a chore.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Bubble Cloud Duration</h4>
-                        <p>Duration selection via floating bubbles. Bubble size = time spent. Spatial memory beats dropdown menus.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Mood + Energy Tracking</h4>
-                        <p>Activity data alone isn't enough. Added mood, energy, and focus scores to correlate with activities. Now the AI can say "You focus better in mornings" instead of just stats.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>AI Daily Summary</h4>
-                        <p>End-of-day email with analysis. Not just stats—actual coaching based on patterns. System prompt defines persona and output format (HTML with inline CSS).</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section collapsible">
-                <h2 class="collapsible-header">
-                    Technical Details
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </h2>
-                <div class="collapsible-content">
-                    <p><strong>Stack:</strong> Next.js, React, TypeScript, framer-motion, Tailwind CSS, Firebase/Firestore, Google Gemini, n8n</p>
-
-                    <h4>Technical Challenges Solved</h4>
-                    <ul>
-                        <li><strong>Swipe Cards Not Working:</strong> Initial framer-motion implementation incomplete. Event handlers weren't connected. Fixed by properly wiring onClick and onDragEnd to state-updating functions.</li>
-                        <li><strong>Goals Section Off-Screen:</strong> Card pushed below viewport at 100% zoom. Core problem: viewport overflow, not flexbox. Removed fixed height, let content flow with native scrolling.</li>
-                        <li><strong>Firestore Composite Index Errors:</strong> Queries filtering by userId AND sorting by date failed silently. Firestore requires explicit composite indexes. Fixed by manually creating indexes in Firebase console.</li>
-                        <li><strong>Case Sensitivity Bugs:</strong> "SavedActivities" vs "savedActivities" caused fetch failures. Fixed with character-by-character audit of frontend queries vs backend collection names.</li>
-                        <li><strong>Notification Architecture:</strong> Firebase emulator couldn't send real push notifications. Used n8n to poll Firestore and trigger FCM directly, bypassing Cloud Functions.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Results</h2>
-                <ul>
-                    <li>Live product at dayflow.rashigupta.cloud</li>
-                    <li>Daily AI coaching summaries based on logged activities</li>
-                    <li>Active iteration based on user feedback from LinkedIn outreach</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section">
-                <h2>What I Learned</h2>
-                <ul>
-                    <li>AI coding assistants get stuck in loops. When this happens: stop, ask for root cause analysis, use console.log to trace errors line by line.</li>
-                    <li>Low-code validation before full build saves weeks of wasted effort.</li>
-                    <li>UX beats features. The bubble interface isn't technically complex, but it's why I actually use the app.</li>
-                    <li>The real value of building something yourself: you understand every failure mode, every workaround, every compromise. That understanding translates directly to better product judgment.</li>
-                </ul>
-            </section>
-
-            <div class="case-study-images">
-                <h3>Screenshots</h3>
-                <div class="image-grid">
-                    <img src="assets/dayflow/home.png" alt="DayFlow Home Screen" loading="lazy">
-                    <img src="assets/dayflow/swipe.png" alt="DayFlow Swipe Interface" loading="lazy">
-                    <img src="assets/dayflow/bubble.png" alt="DayFlow Bubble Duration" loading="lazy">
-                    <img src="assets/dayflow/summary.png" alt="DayFlow AI Summary" loading="lazy">
-                </div>
+            <div class="case-study-embed">
+                <iframe src="assets/dayflow/presentation.html" title="DayFlow Case Study"></iframe>
             </div>
         </article>
     </template>
 
     <template id="case-study-oracle-rag">
-        <article class="case-study">
+        <article class="case-study case-study--compact">
             <header class="case-study-header">
-                <span class="case-study-type">Personal AI Tool</span>
+                <div class="case-study-meta">
+                    <span class="case-study-type">Personal AI Tool</span>
+                    <span class="case-study-date">2025</span>
+                </div>
                 <h1 class="case-study-title">Oracle RAG Chatbot</h1>
-                <p class="case-study-subtitle">Domain-specific chatbot trained on 1000+ pages of Oracle Fusion documentation with anti-hallucination guardrails.</p>
+                <p class="case-study-blurb">At IBM, colleagues spent hours searching through 1000+ pages of Oracle Fusion PDFs for navigation paths and configuration steps. Google and ChatGPT gave generic answers that missed Oracle-specific terminology. This RAG chatbot ingests 11 curated documents (~37.7 MB), provides verified answers with exact source citations, and refuses to guess when the information isn't in the docs.</p>
                 <div class="case-study-links">
-                    <a href="https://oracle-rag-chatbot.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App</a>
+                    <a href="https://oracle-rag-chatbot.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App &#8599;</a>
                 </div>
             </header>
-
-            <div class="case-study-images">
-                <div class="image-single">
-                    <img src="assets/oracle-rag/case-study.png" alt="Oracle RAG Chatbot Case Study" loading="lazy">
-                </div>
+            <div class="case-study-embed">
+                <iframe src="assets/oracle-rag/onepager.html" title="Oracle RAG Chatbot Overview"></iframe>
             </div>
-
-            <section class="case-study-section">
-                <h2>The Problem</h2>
-                <p>At IBM, I watched colleagues struggle with Oracle Fusion documentation. We're talking 1000+ page PDF manuals for Procurement and Expenses. Every time someone needed to find a navigation path or configuration step, they'd Ctrl+F through multiple documents, often finding outdated or conflicting information.</p>
-                <p>I didn't need another chatbot. I needed one that could answer Oracle-specific questions accurately, provide exact breadcrumb navigation paths, and refuse to make things up when it didn't know.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>My Role</h2>
-                <p>Solo developer and product owner. Defined the problem, selected the tech stack, processed the documentation, configured the RAG pipeline, and deployed the solution.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>The Approach</h2>
-                <p>Built a domain-specific RAG (Retrieval-Augmented Generation) chatbot trained on official Oracle Fusion guides for Procurement, Expenses, and Contracts.</p>
-
-                <h3>Key Decision: Chunking Strategy</h3>
-                <p>Used a Recursive Character Text Splitter with chunk size 1000 and overlap 200. The overlap was critical—Oracle documentation has dense sequential steps where context from the previous chunk matters. Without overlap, the model would give incomplete navigation paths.</p>
-            </section>
-
-            <section class="case-study-section collapsible">
-                <h2 class="collapsible-header">
-                    Technical Architecture
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </h2>
-                <div class="collapsible-content">
-                    <ul>
-                        <li><strong>Knowledge Base:</strong> Official Oracle Fusion guides (Using/Implementing Procurement, Expenses, Contracts)</li>
-                        <li><strong>Embeddings:</strong> Google Gemini (text-embedding-004)</li>
-                        <li><strong>Vector Database:</strong> For semantic search and retrieval</li>
-                        <li><strong>LLM:</strong> Google Gemini via AI Studio</li>
-                        <li><strong>Orchestration:</strong> n8n</li>
-                        <li><strong>Hosting:</strong> Vercel with custom domain</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Key Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h4>Navigation Assistance</h4>
-                        <p>Provides exact Oracle breadcrumb paths (e.g., "Navigator > Financials > Expenses > Expense Reports")</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Configuration Guidance</h4>
-                        <p>Summarizes backend setup requirements for administrators</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Anti-Hallucination Guardrails</h4>
-                        <p>System instructions force the bot to only answer from provided documents. If information is missing, it says so instead of guessing.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Source Attribution</h4>
-                        <p>Every answer lists the specific Oracle manual used, so users can verify.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Results</h2>
-                <ul>
-                    <li>1000+ pages of documentation accessible via conversation</li>
-                    <li>Exact navigation paths instead of vague instructions</li>
-                    <li>Zero hallucination on unknown queries (refuses to answer)</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section">
-                <h2>What I Learned</h2>
-                <p>The value isn't the technology—RAG is well-documented. The value is understanding the domain problem well enough to know what questions people actually ask, what format they need answers in (navigation paths, not paragraphs), and when the system should refuse to answer.</p>
-            </section>
         </article>
     </template>
 
     <template id="case-study-ats">
-        <article class="case-study">
+        <article class="case-study case-study--compact">
             <header class="case-study-header">
-                <span class="case-study-type">Personal Tool (Open Source)</span>
+                <div class="case-study-meta">
+                    <span class="case-study-type">Personal Tool (Open Source)</span>
+                    <span class="case-study-date">2025</span>
+                </div>
                 <h1 class="case-study-title">ATS Resume Optimizer</h1>
-                <p class="case-study-subtitle">Multi-LLM resume optimization tool with BYOK model supporting Claude, GPT-4, Gemini, and OpenRouter.</p>
+                <p class="case-study-blurb">75% of resumes get filtered out by ATS systems before a human ever sees them. I was applying for AI PM roles and needed a tool that could extract job-specific keywords, restructure bullets using the STAR method, and strip out AI-sounding language &mdash; without paying $20-50 per optimization. Built a multi-LLM tool supporting Claude, GPT-4, Gemini, and OpenRouter with a bring-your-own-key model. Zero hosting costs, zero data stored.</p>
                 <div class="case-study-links">
-                    <a href="https://ats-resume-optimizer.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App</a>
-                    <a href="https://github.com/rashis-git/ats-resume-optimizer" target="_blank" rel="noopener" class="case-study-link">View on GitHub</a>
+                    <a href="https://ats-resume-optimizer.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App &#8599;</a>
+                    <a href="https://github.com/rashis-git/ats-resume-optimizer" target="_blank" rel="noopener" class="case-study-link">GitHub &#8599;</a>
                 </div>
             </header>
-
-            <div class="case-study-images">
-                <div class="image-single">
-                    <img src="assets/ats/case-study.png" alt="ATS Resume Optimizer Case Study" loading="lazy">
-                </div>
+            <div class="case-study-embed">
+                <iframe src="assets/ats/onepager.html" title="ATS Resume Optimizer Overview"></iframe>
             </div>
-
-            <section class="case-study-section">
-                <h2>The Problem</h2>
-                <p>I was applying for AI Product Manager roles. Generic resume templates weren't working. 75% of resumes never reach human eyes—they're filtered by Applicant Tracking Systems that scan for keyword matches.</p>
-                <p>I needed a tool that could analyze job descriptions, extract relevant keywords, and restructure my resume accordingly. No free tool did this well. Paid options cost $20-50 per optimization.</p>
-                <p>So I built my own.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>My Role</h2>
-                <p>Solo developer and product owner. Made architectural decisions, evaluated platform trade-offs, designed the provider abstraction layer, and used AI-assisted development to implement the solution.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>The Approach</h2>
-                <h3>Key Decisions</h3>
-                <ul>
-                    <li><strong>Multi-provider support:</strong> Users bring their own API keys. This keeps hosting free (no API costs on my end) while giving users flexibility. Built a provider abstraction layer that routes requests to any of the 4 LLM providers.</li>
-                    <li><strong>Platform selection:</strong> Started with Streamlit—hit a wall when it didn't support custom domains. Tried Render—free tier stops the app after inactivity. Evaluated trade-offs (uptime, custom domains, cost) and chose Vercel's serverless Python functions.</li>
-                    <li><strong>No database:</strong> Privacy-first design. Resumes contain sensitive information. Nothing gets stored.</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section collapsible">
-                <h2 class="collapsible-header">
-                    Technical Architecture
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </h2>
-                <div class="collapsible-content">
-                    <ul>
-                        <li><strong>Frontend:</strong> HTML/CSS/JavaScript (no framework—keeping it lightweight)</li>
-                        <li><strong>Backend:</strong> Python serverless function on Vercel</li>
-                        <li><strong>AI Integration:</strong> Claude API, OpenAI GPT-4, Google Gemini, OpenRouter</li>
-                        <li><strong>Provider Abstraction:</strong> Unified interface handling authentication and request/response formats for all providers</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Key Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h4>Keyword Extraction</h4>
-                        <p>Identifies must-have terms (mentioned 3+ times in JD) and nice-to-have terms (1-2 mentions)</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>STAR Method Restructuring</h4>
-                        <p>Rewrites achievement bullets using Situation-Task-Action-Result format</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Professional Summary Rewrite</h4>
-                        <p>Tailors the opening paragraph to match role positioning</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Writing Quality Rules</h4>
-                        <p>Applies custom ruleset that removes AI-sounding language (no "delve," "leverage," or "synergy")</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Results</h2>
-                <ul>
-                    <li>I use this tool for every application now</li>
-                    <li>Open-sourced on GitHub with multiple forks</li>
-                    <li>Zero hosting costs (BYOK model)</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section">
-                <h2>What I Learned</h2>
-                <ul>
-                    <li>Building for yourself is the best validation.</li>
-                    <li>Provider abstraction matters. Different LLMs have different strengths—Claude is better at writing, GPT-4 at keyword extraction.</li>
-                    <li>Open-source as portfolio: The code is public on GitHub. Multiple people have forked it.</li>
-                </ul>
-            </section>
         </article>
     </template>
 
-    <template id="case-study-genai">
-        <article class="case-study">
+    <template id="case-study-solobite">
+        <article class="case-study case-study--compact">
             <header class="case-study-header">
-                <span class="case-study-type">IBM AI Project</span>
-                <h1 class="case-study-title">GenAI Test Script Generator</h1>
-                <p class="case-study-subtitle">AI agent that generates Oracle Fusion test scripts from RTM templates, reducing creation time from 3-4 days to 10 minutes.</p>
+                <div class="case-study-meta">
+                    <span class="case-study-type">AI Meal Companion</span>
+                    <span class="case-study-date">In Progress</span>
+                </div>
+                <h1 class="case-study-title">SoloBite</h1>
+                <p class="case-study-blurb">My sister cooks alone in Bangalore &mdash; every recipe app defaults to 4 servings, wastes half her groceries, and ignores what's already in her fridge. SoloBite is an AI meal companion built for solo diners: snap your fridge, type what you have, or say what you're craving. You get a single-portion, nutritionally-complete recipe with exact macros and a video walkthrough. No accounts, no data stored.</p>
+                <div class="case-study-links">
+                    <a href="https://solobite.rashigupta.cloud" target="_blank" rel="noopener" class="case-study-link">Visit Live App &#8599;</a>
+                    <a href="https://github.com/rashis-git/SoloBite" target="_blank" rel="noopener" class="case-study-link">GitHub &#8599;</a>
+                </div>
             </header>
-
-            <section class="case-study-section">
-                <h2>The Problem</h2>
-                <p>Writing test scripts for Oracle Fusion modules took experienced consultants 3-4 days per RTM template. Leadership wanted to automate this using GenAI.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>My Role</h2>
-                <p>I wasn't writing the prompts—there was a technical team for that. But I:</p>
-                <ul>
-                    <li>Framed the test scripts the LLM trained on</li>
-                    <li>Compared outputs across different models to identify which worked better for which scenarios</li>
-                    <li>Worked with the technical team to understand why outputs were wrong</li>
-                    <li>Tested parameter adjustments (temperature, top k, top p) and documented their impact</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section">
-                <h2>The Approach</h2>
-
-                <h3>Version 1 (The Failure)</h3>
-                <p>We trained a prompt-based agent on existing test scripts using IBM's LLMs (Granite, Llama). It hallucinated constantly.</p>
-                <p><strong>Example:</strong> Asking "how to create a manual PO matched invoice" produced steps like "go to payables, create invoice, add invoice number, click match PO"—technically correct flow, but using generic terms instead of Oracle-specific field names and button labels.</p>
-                <p>For modules we asked about frequently (where we corrected the model repeatedly), accuracy hit ~60%. For others, 3 out of 5 responses were unusable.</p>
-
-                <h3>Version 2 (The Fix)</h3>
-                <p>The breakthrough came from a business process insight, not a technical one. After requirement gathering, the next mandatory document is always an RTM (Requirements Traceability Matrix). It contains everything: process, module, sub-module, domain, new features, configurations.</p>
-                <p>We changed the input. Instead of prompts, users uploaded their RTM template directly. The RTM gave the agent exact context it needed—specific Oracle terminology, module details, and process branches.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Results</h2>
-                <ul>
-                    <li><strong>Generation time:</strong> 3-4 days down to 10 minutes</li>
-                    <li><strong>Quality:</strong> ~60-70% accurate (enough for junior consultants to use as a baseline with minor edits)</li>
-                    <li><strong>Key insight:</strong> Low temperature settings worked best—we needed deterministic output, not creative writing</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section">
-                <h2>What I Learned</h2>
-                <p>The fix wasn't a model change or prompt engineering trick. It was understanding that the business process already produced structured context (the RTM). The technical team could iterate on prompts forever. The business insight made the difference.</p>
-                <p>This is why I want to be an AI PM: I see how business context fixes AI problems better than technical tweaks alone.</p>
-            </section>
+            <div class="case-study-embed">
+                <iframe src="assets/solobite/presentation.pdf" title="SoloBite Case Study"></iframe>
+            </div>
         </article>
     </template>
 
-    <template id="case-study-oracle-enterprise">
-        <article class="case-study">
+    <template id="case-study-debubble">
+        <article class="case-study case-study--compact">
             <header class="case-study-header">
-                <span class="case-study-type">IBM Enterprise Project</span>
-                <h1 class="case-study-title">Oracle Expenses & Procurement</h1>
-                <p class="case-study-subtitle">Global Oracle Fusion implementation: Expenses for 72 business units across 20 countries with China Fapiao integration, plus Amazon Punchout catalog with custom CXML payloads for regional tax handling.</p>
-            </header>
-
-            <section class="case-study-section">
-                <h2>Overview</h2>
-                <p>Two major workstreams for a multinational client: implementing Oracle Fusion Expenses globally and rolling out Amazon Punchout catalog integration across 20 regions. Both required navigating complex regulatory requirements, custom integrations, and cross-functional coordination.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>My Role</h2>
-                <ul>
-                    <li><strong>Expenses:</strong> Sole owner of the module. Trained and managed one team member. Responsible for configuration, policy design, and China Fapiao integration.</li>
-                    <li><strong>Procurement:</strong> Development lead working with a teammate. Handled CXML payload customizations, supplier registration rules, and approval workflows.</li>
-                </ul>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Part 1: Global Expenses Implementation</h2>
-
-                <h3>The Challenge</h3>
-                <p>Configure Oracle Fusion Expenses for 72 business units across 20 countries—each with different expense policies, regulatory requirements, and approval workflows. I was assigned as the sole consultant with no finance background.</p>
-
-                <h3>Expense Policies</h3>
-                <ul>
-                    <li>Configured meal allowances by region (e.g., US: $2 breakfast, $4 lunch, $7 dinner)</li>
-                    <li>Set up accommodation limits and entertainment policies for different employee levels</li>
-                    <li>Built multiple expense types for different regions based on local business rules</li>
-                </ul>
-
-                <h3>Custom Solutions</h3>
-                <ul>
-                    <li><strong>Meal Itemization:</strong> Users entered total daily meal costs, but business needed breakfast/lunch/dinner tracked separately. Implemented itemization feature splitting expense types into sub-items.</li>
-                    <li><strong>CEO Auto-Approval:</strong> Configured approval rules to auto-approve C-level expense reports while keeping audit trail intact.</li>
-                </ul>
-
-                <h3>The China Fapiao Challenge</h3>
-                <p>China has mandatory Fapiao review—government invoice verification before reimbursement. Oracle Expenses doesn't support this out of the box. China users wouldn't share documentation and barely explained their process.</p>
-
-                <p><strong>My Approach:</strong></p>
-                <ol>
-                    <li>Researched the general Fapiao process for Chinese markets online</li>
-                    <li>Created a draft process flow with embedded questions</li>
-                    <li>Presented the "wrong" workflow to users—they corrected it (this got them talking)</li>
-                    <li>Once they saw we were serious, they shared Chinese documentation that we had translated</li>
-                </ol>
-
-                <p><strong>Vendor Selection:</strong> Three options: Tencent, Baidu, Alibaba. Chose Alibaba—most expensive, but most widely used for this integration type. IBM China had existing experience. Lower implementation risk outweighed higher cost.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Part 2: Amazon Punchout & Procurement</h2>
-
-                <h3>The Challenge</h3>
-                <p>Integrate Amazon Punchout catalog across 20 regions: Germany, France, UK, Spain, US, and 15 others. Every country had different tax requirements and payload formats. Oracle's standard CXML templates couldn't handle the complexity.</p>
-
-                <h3>UK Tax Problem</h3>
-                <p>Amazon UK sent special handling charges separately with their own tax. Oracle's default CXML template only pulled tax from item lines—special handling tax was ignored.</p>
-                <p><strong>Solution:</strong> Mapped total tax (line + special handling) to the Control Amount field. Repurposed a validation checkpoint to capture full tax. Tax percentages now came from header-level blocks instead of line-level.</p>
-                <p><strong>Result:</strong> Invoices matched correctly. Previously, 4-5 invoices per week needed manual corrections.</p>
-
-                <h3>US Tax Code Bypass</h3>
-                <p>Amazon US wanted "USSD" as the tax rate code regardless of actual percentage. Added conditional logic: if DUNS number = Amazon US DUNS, bypass DVM mapping and hardcode USSD.</p>
-
-                <h3>Dell Regional Tax</h3>
-                <p>Dell US had two tax rates (GST and PST) based on region. Created region-specific conditions in the payload to apply both rates correctly.</p>
-
-                <h3>VBCS UI Improvements</h3>
-                <p>Users kept entering wrong Payment Terms (NET15 requires CFO approval). Noticed the pattern from ticket volume. Added hover messages and warning text. Result: 2 fewer tickets per day, fewer accidental CFO escalations.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Results</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h4>Expenses</h4>
-                        <ul>
-                            <li>72 business units across 20 countries</li>
-                            <li>China Fapiao integration live</li>
-                            <li>Regional policies configured</li>
-                        </ul>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Procurement</h4>
-                        <ul>
-                            <li>20 regions with Amazon Punchout</li>
-                            <li>4-5 manual fixes/week eliminated</li>
-                            <li>2 fewer tickets/day from UI fixes</li>
-                        </ul>
-                    </div>
+                <div class="case-study-meta">
+                    <span class="case-study-type">Anti-Content-Bubble PWA</span>
+                    <span class="case-study-date">In Progress</span>
                 </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>What I Learned</h2>
-                <ul>
-                    <li>Presenting a "wrong" solution is sometimes the fastest way to get stakeholders to share information</li>
-                    <li>Vendor selection isn't just about cost—implementation risk and team experience matter more</li>
-                    <li>Reading code character by character sounds tedious but it's how you find the actual problem</li>
-                    <li>Small UI changes (hover messages) can significantly reduce support burden</li>
-                    <li>Repurposing existing fields is often better than building new functionality</li>
-                </ul>
-            </section>
+                <h1 class="case-study-title">Debubble</h1>
+                <p class="case-study-blurb">My husband noticed his YouTube feed had become an echo chamber &mdash; same topics, same perspectives, every day. Research shows unfamiliar content activates different brain regions, but no product builds around that insight. Debubble is a subscription PWA that fights content bubbles with daily AI-curated reads, progressively expanding your intellectual world through increasingly unfamiliar but connected topics.</p>
+            </header>
+            <div class="case-study-embed">
+                <iframe src="assets/debubble/placeholder.html" title="Debubble Preview"></iframe>
+            </div>
         </article>
     </template>
 

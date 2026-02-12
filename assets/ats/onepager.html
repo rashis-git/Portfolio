@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATS Resume Optimizer — Product One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --carbon: #242423;
+    --graphite: #333533;
+    --tuscan: #f5cb5c;
+    --tuscan-light: #fdf3d1;
+    --tuscan-dark: #d4a828;
+    --linen: #e8eddf;
+    --alabaster: #cfdbd5;
+    --white: #ffffff;
+    --bg: #f4f5f0;
+    --success: #3a7d44;
+    --success-light: #e8f5e9;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(36,36,35,0.06), 0 2px 8px rgba(36,36,35,0.04);
+    --shadow-hover: 0 2px 8px rgba(36,36,35,0.1), 0 4px 16px rgba(36,36,35,0.06);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--carbon);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 28px 32px 20px;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1.5px solid var(--alabaster);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--tuscan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--carbon);
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(245,203,92,0.35);
+  }
+
+  .header-title h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--carbon);
+    line-height: 1.2;
+  }
+
+  .header-title p {
+    font-size: 12.5px;
+    color: var(--graphite);
+    opacity: 0.7;
+    margin-top: 1px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .badge--live {
+    background: var(--success-light);
+    color: var(--success);
+    border: 1px solid rgba(58,125,68,0.2);
+  }
+
+  .badge--live::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--success);
+    margin-right: 5px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .badge--outline {
+    background: transparent;
+    color: var(--graphite);
+    border: 1.5px solid var(--alabaster);
+  }
+
+  /* ── Grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--linen);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-header {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--graphite);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-header .icon {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  .card p {
+    font-size: 12.5px;
+    color: var(--graphite);
+    line-height: 1.6;
+  }
+
+  /* ── Pain Points ── */
+  .pain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--graphite);
+    line-height: 1.5;
+  }
+
+  .pain-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .pain-icon--red { background: #fde8e8; color: #c0392b; }
+  .pain-icon--orange { background: #fff3e0; color: #e67e22; }
+  .pain-icon--blue { background: #e8f0fe; color: #2962ff; }
+
+  /* ── Architecture Steps ── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .step {
+    background: var(--tuscan-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid rgba(245,203,92,0.25);
+  }
+
+  .step-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--tuscan-dark);
+    min-width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(245,203,92,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    font-size: 12px;
+    color: var(--carbon);
+    line-height: 1.45;
+  }
+
+  .step-content strong {
+    font-weight: 600;
+  }
+
+  /* ── Live App Card ── */
+  .live-app {
+    margin-top: 14px;
+  }
+
+  .live-app-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .live-dot {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--success);
+  }
+
+  .live-dot::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .visit-link {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--tuscan-dark);
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1.5px solid var(--tuscan);
+    transition: background 0.15s ease;
+  }
+
+  .visit-link:hover {
+    background: var(--tuscan-light);
+  }
+
+  .demo-preview {
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px dashed var(--alabaster);
+    padding: 12px;
+    text-align: center;
+  }
+
+  .demo-preview .label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--alabaster);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .demo-preview .url {
+    font-size: 11px;
+    color: var(--graphite);
+    opacity: 0.6;
+    word-break: break-all;
+  }
+
+  /* ── Status Card ── */
+  .status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .status-label {
+    font-size: 12px;
+    color: var(--graphite);
+  }
+
+  .status-value {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--success);
+    background: var(--success-light);
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--linen);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--tuscan-dark), var(--tuscan));
+    border-radius: 3px;
+  }
+
+  .status-note {
+    font-size: 11px;
+    color: var(--graphite);
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+
+  /* ── Metrics ── */
+  .metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .metric-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--linen);
+  }
+
+  .metric-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .metric-label {
+    font-size: 12px;
+    color: var(--graphite);
+  }
+
+  .metric-value {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--tuscan-dark);
+  }
+
+  /* ── Tech Stack ── */
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .pill {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--linen);
+    color: var(--graphite);
+    border: 1px solid var(--alabaster);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1.5px solid var(--alabaster);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: var(--graphite);
+    opacity: 0.75;
+  }
+
+  .footer-left {
+    font-weight: 600;
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-right span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-icon {
+    opacity: 0.6;
+  }
+
+  /* ── GitHub SVG ── */
+  .gh-icon {
+    width: 14px;
+    height: 14px;
+    fill: var(--graphite);
+    opacity: 0.6;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">ATS</div>
+      <div class="header-title">
+        <h1>ATS Resume Optimizer</h1>
+        <p>AI-Powered Resume Enhancement Tool</p>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge--live">Live</span>
+      <span class="badge badge--outline">HR-Tech</span>
+    </div>
+  </header>
+
+  <!-- Card Grid -->
+  <div class="grid">
+
+    <!-- ═══ Column 1 ═══ -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+
+      <!-- The Challenge -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#9888;&#65039;</span> The Challenge</div>
+        <p>75% of resumes never reach human eyes due to ATS filtering. Job seekers struggle to match keywords while maintaining a natural, human tone.</p>
+      </div>
+
+      <!-- The Solution -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#128161;</span> The Solution</div>
+        <p>A Multi-LLM Resume Optimizer that extracts job-specific keywords, restructures content using STAR method, and filters 75+ AI buzzwords for authenticity.</p>
+      </div>
+
+      <!-- Pain Points -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#128293;</span> Pain Points</div>
+        <ul class="pain-list">
+          <li>
+            <div class="pain-icon pain-icon--red">&#10005;</div>
+            <span>ATS systems reject resumes without exact keyword matches</span>
+          </li>
+          <li>
+            <div class="pain-icon pain-icon--orange">&#9203;</div>
+            <span>Manual keyword extraction is time-consuming &amp; error-prone</span>
+          </li>
+          <li>
+            <div class="pain-icon pain-icon--blue">&#9881;</div>
+            <span>AI-generated content sounds robotic and inauthentic</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ═══ Column 2 ═══ -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+
+      <!-- Solution Architecture -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#128736;&#65039;</span> Solution Architecture</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content"><strong>Resume Upload</strong> &mdash; User submits resume + job description</div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content"><strong>Keyword Extraction</strong> &mdash; LLM identifies critical job keywords</div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content"><strong>STAR Restructure</strong> &mdash; Content rewritten with STAR method</div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-content"><strong>Tone Filter</strong> &mdash; 75+ buzzwords filtered for human voice</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Application -->
+      <div class="card live-app">
+        <div class="live-app-inner">
+          <div class="live-dot">Live Application</div>
+          <a href="https://ats-resume-optimizer.rashigupta.cloud" target="_blank" class="visit-link">Visit &rarr;</a>
+        </div>
+        <div class="demo-preview">
+          <div class="label">Demo Preview</div>
+          <div class="url">ats-resume-optimizer.rashigupta.cloud</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══ Column 3 ═══ -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+
+      <!-- Current Status -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#128202;</span> Current Status</div>
+        <div class="status-row">
+          <span class="status-label">Phase</span>
+          <span class="status-value">Production</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <p class="status-note">Deployed on Vercel with auto-scaling serverless functions</p>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#127919;</span> Key Metrics</div>
+        <div class="metrics">
+          <div class="metric-row">
+            <span class="metric-label">Resumes Generated</span>
+            <span class="metric-value">15+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">LLM Providers</span>
+            <span class="metric-value">4</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Development Time</span>
+            <span class="metric-value">&lt;1 week</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Data Stored</span>
+            <span class="metric-value">0 (Privacy)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="card">
+        <div class="card-header"><span class="icon">&#128187;</span> Tech Stack</div>
+        <div class="tech-pills">
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Vercel</span>
+          <span class="pill">Claude API</span>
+          <span class="pill">GPT-4</span>
+          <span class="pill">Gemini</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">Role: Product Owner</div>
+    <div class="footer-right">
+      <span>
+        <svg class="gh-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </span>
+      <span>&#128274; Privacy-first architecture</span>
+      <span>&#128273; BYOK model (free hosting)</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

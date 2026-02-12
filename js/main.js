@@ -50,8 +50,8 @@ const caseStudyMap = {
     'dayflow': 'case-study-dayflow',
     'oracle-rag': 'case-study-oracle-rag',
     'ats': 'case-study-ats',
-    'genai': 'case-study-genai',
-    'oracle-enterprise': 'case-study-oracle-enterprise'
+    'solobite': 'case-study-solobite',
+    'debubble': 'case-study-debubble'
 };
 
 function openModal(projectId) {
